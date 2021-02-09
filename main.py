@@ -6,6 +6,7 @@ import numpy as np
 import easydict
 import pandas as pd
 
+from sklearn import preprocessing
 from sklearn.preprocessing import StandardScaler
 from sklearn_pandas import DataFrameMapper
 from sklearn.model_selection import StratifiedKFold
