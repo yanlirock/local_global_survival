@@ -17,7 +17,7 @@ from surv_data import SurvData, collate_fn, deepsurvival_hf5_reader
 from torch.utils.data import DataLoader
 
 path = os.getcwd()+'/data/'
-file  = 'nwtco_all.csv'
+file  = 'nwtco.csv'
 file_name = path+file
 data = pd.read_csv(file_name)
 
