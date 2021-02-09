@@ -79,7 +79,7 @@ for train_index, test_index in skf.split(X_normalize, event_all):
     model = DeepAsymmetric(net, sigma=0.01,measure='mae',dtype=dtype).to(device)
     """
     model  = CombinedLossSurvModel(net, sigma=0.01, Cindex_type="ipcw", 
-                        event_train= event_all,alpha=alpha,
+                        event_train= event_all,alpha=0.5,
                         time_train = time_all, measure='mae',dtype=dtype).to(device)
 
     optimizer = torch.optim.SGD(model.parameters(), lr=args.lr, momentum=0.9)
