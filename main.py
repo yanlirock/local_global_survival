@@ -106,14 +106,13 @@ for train_index, test_index in skf.split(X_normalize, event_all):
     )
     test_loader = iter(cycle(test_load))
 
-    train_iter = len(train_data) // args.batch_size
+    train_iter = len(train_data) // args.batch_size +1
     test_iter = 1
 
     # Start model training and evaulation
     cindex_epoch = []
     mae_epoch = []
     for epoch in range(args.epochs):
-        num_iter = len(train_data) // args.batch_size
         start_time = time.time()
 
         for i_iter in range(train_iter):
