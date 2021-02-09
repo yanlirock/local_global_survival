@@ -142,7 +142,7 @@ for train_index, test_index in skf.split(X_normalize, event_all):
             x_test = torch.from_numpy(x_test).to(device).type(dtype)
             _, estimate_y, _, _ = model(x_test, y_test, event_test)
             event_indicator = np.hstack((event_indicator, event_test))
-            event_time x= np.hstack((event_time,y_test))
+            event_time = np.hstack((event_time,y_test))
             estimate = np.hstack((estimate,estimate_y.cpu().detach().numpy()))
 
         test_cindex = concordance_index_censored(event_indicator.astype(bool), event_time, -1*estimate)
