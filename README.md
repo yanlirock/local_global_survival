@@ -1,4 +1,4 @@
-# local_global_curvival
+# local_global_survival
 
 the main.py is the main file to conduct experiment.
 
